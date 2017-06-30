@@ -1,3 +1,3 @@
-FROM tomwhiston/micro-golang:latest
+FROM tomwhiston/micro-golang:test
 
 EXPOSE 8020
