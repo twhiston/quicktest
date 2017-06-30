@@ -31,7 +31,11 @@ func main() {
 	router := wrouter.NewRouter()
 	router.AddController(new(mainController))
 	router.PrintRoutes(os.Stdout)
-	http.ListenAndServe(":8020", router)
+	err := http.ListenAndServe(":8020", router)
+	if err != nil {
+		log.Println(err.Error())
+		os.Exit(1)
+	}
 }
 
 func PrintSomething(something string) {
